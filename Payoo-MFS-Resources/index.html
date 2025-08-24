@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo Project</title>
+    <title>Payoo Project</title> 
+     <script>
+    const originalWarn = console.warn;
+    console.warn = function(msg, ...args) {
+      if(msg && msg.includes('The browser build of Tailwind CSS should not be used in production')){
+        return; 
+      }
+      originalWarn(msg, ...args);
+    }
+  </script>
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-</head>
-<body class="bg-[#f4f5f7] h-[100vh] flex justify-center items-center " >
+</head> 
+<body class="bg-[#f4f5f7] h-[100vh] flex flex-col  justify-center items-center " >
+
+
     <form class="w-[350px] h-[270px]  rounded-lg p-8 bg-white ">
    <div>
 
    
  <label for="" class="font-semibold">Mobile Number </label>  <br>
- <input type="text" placeholder="Enter your number" class="input bg-[#f4f5f7] mt-2" />
+ <input type="text" placeholder="Enter your number" class="input bg-[#f4f5f7] mt-2" id="mobile-number"/>
 
 </div> 
 
@@ -23,10 +34,10 @@
 
    
  <label for="" class="mt-2 font-semibold"> 4 digit pin </label>  <br>
- <input type="number" placeholder="Enter 4 digit pin" class="input bg-[#f4f5f7] mt-2" />
+ <input type="number" placeholder="Enter 4 digit pin" class="input bg-[#f4f5f7] mt-2" id="pin-number" />
 
 </div> 
-<button class="btn btn-active btn-primary bg-[#0874f2] w-full mt-4 rounded-lg text-[18px]">Login</button>
+<button id="login" class="btn btn-active btn-primary bg-[#0874f2] w-full mt-4 rounded-lg text-[18px]">Login</button>
 
 
 
@@ -36,6 +47,6 @@
 
 
 
-    <script src=""></script>
+    <script src="imdex.js"></script>
 </body>
 </html>
